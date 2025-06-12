@@ -8,7 +8,7 @@ const genAI = apiBaseUrl
   : new GoogleGenerativeAI(apiKey)
 
 export const startChatAndSendMessageStream = async(history: ChatMessage[], newMessage: { parts: { text: string }[] }) => {
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' })
+  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-preview-0520' })
 
   const chat = model.startChat({
     history: history.map(msg => ({
