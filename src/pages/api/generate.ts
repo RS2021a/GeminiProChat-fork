@@ -35,7 +35,8 @@ export const post: APIRoute = async(context) => {
 
   try {
     const history = messages.slice(0, -1) // All messages except the last one
-    const newMessage = {parts: messages[messages.length - 1].parts.map(part => ({ text: part.text })) // 🛠️ 确保格式正确}
+    const newMessage = {parts: messages[messages.length - 1].parts.map(part => ({ text: part.text })) // 🛠️ 确保格式正确
+      }
 
     // Start chat and send message with streaming
     const responseStream = await startChatAndSendMessageStream(history, newMessage)
